@@ -49,6 +49,10 @@ app.post('/send', (req, res) => {
 
 })
 
+app.get('/', (req, res) => {
+    return res.send({ work: 'ok' });
+})
+
 app.listen(process.env.PORT || 9000, () => {
     console.log('API ATIVA');
 });
