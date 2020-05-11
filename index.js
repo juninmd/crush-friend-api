@@ -40,7 +40,7 @@ app.post('/send', (req, res) => {
     transporter.sendMail(mailOptions, (err, data) => {
         if (err) {
             console.log('DEU RUIM');
-            return res.send({ status: 'não enviado' }).status(500);
+            return res.status(500).send({ status: 'não enviado', err });
         } else {
             console.log('e-mail enviado')
             return res.send({ status: 'ok' });
